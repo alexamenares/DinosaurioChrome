@@ -1,26 +1,20 @@
 import time
 import random
-
 puntuacion = 0
 jugando = True
 obstaculo = False
 dino_saltando = False
-
 print("Bienvenido al Juego del Dinosaurio de Chrome")
 print("Presiona Enter para saltar. ¡Evita los obstáculos!")
 input("Presiona botón Enter para comenzar...")
-
 while jugando:
     obstaculo = random.choice([True, False, False])  # menos probabilidades
-
     if obstaculo:
         print("\n¡Obstáculo delante! (Cactus o Ave)")
         print("¡SALTA AHORA! Presiona Enter rápidamente para saltar")
-        
         start = time.time()
         input()
         end = time.time()
-
         if end - start <= 1:  # si saltó a tiempo
             print(" ¡Saltaste a tiempo!")
             puntuacion += 1
@@ -30,9 +24,7 @@ while jugando:
     else:
         print("...corriendo...")
         puntuacion += 1
-
     time.sleep(0.8)
-
 print(f"\nFin del juego. Puntuación final: {puntuacion}")
 }
 
